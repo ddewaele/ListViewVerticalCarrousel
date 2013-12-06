@@ -1,0 +1,1 @@
+Carrousel effect with an Android ListView.
