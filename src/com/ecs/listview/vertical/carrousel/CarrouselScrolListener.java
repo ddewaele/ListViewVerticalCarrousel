@@ -1,5 +1,8 @@
 package com.ecs.listview.vertical.carrousel;
 
+import android.content.Context;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
@@ -8,6 +11,13 @@ import android.widget.TextView;
 
 public class CarrouselScrolListener implements OnScrollListener {
 
+	
+	private Context context;
+
+	public CarrouselScrolListener(Context context) {
+		this.context = context;
+	}
+	
 	@Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
     }
@@ -45,13 +55,18 @@ public class CarrouselScrolListener implements OnScrollListener {
                  	
                  	title.setAlpha(mapped);
                  	
-                 	//title.setTextSize(mapped*30);
-                 	
+                 	title.setPivotX(0);
+                 	if (title.getLineCount()>1) {
+                 		title.setPivotY(100);
+                 	} else {
+                 		title.setPivotY(title.getHeight());
+                 	}
                  	title.setScaleX(mapped);
                  	title.setScaleY(mapped);
                  	
                  	
                  	//Log.i(TAG, " +++ inside onScroll with " + i + " - " +  mapped + " - " + top + " - " +  title.getText());
+                 	//Log.i(Constants.TAG, " +++ inside onScroll with " + i + " - " +  title.getHeight() + " - " + title.getLineHeight() + " - " + title.getLineCount() + " - " +  title.getText());
                  	
              	} else {
              		circle.setAlpha(0.0f);

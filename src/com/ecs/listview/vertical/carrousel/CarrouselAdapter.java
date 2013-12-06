@@ -64,7 +64,7 @@ public class CarrouselAdapter extends ArrayAdapter<String> {
 		            
         holder.title.setTextColor(Color.BLACK);
         holder.title.setText(getItem(position));
-        Log.i("App", " +++ getView called " + position + " - " + getCount() + " - " + holder.title.getText() + " - " + view.getX() + ":" + view.getY() + ":" + view.getTop() + ":" + view.getBottom());
+        //Log.i("App", " +++ getView called " + position + " - " + getCount() + " - " + holder.title.getText() + " - " + view.getX() + ":" + view.getY() + ":" + view.getTop() + ":" + view.getBottom());
         return view;
     }
     

@@ -24,7 +24,7 @@ public class MainActivity extends ListActivity {
 
 		setListAdapter(mAdapter);
 
-		listView.setOnScrollListener(new CarrouselScrolListener());
+		listView.setOnScrollListener(new CarrouselScrolListener(getApplicationContext()));
 
 		listView.post(new Runnable() {
 			@Override
