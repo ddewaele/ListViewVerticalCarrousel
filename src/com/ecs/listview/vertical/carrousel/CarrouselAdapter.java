@@ -40,36 +40,25 @@ public class CarrouselAdapter extends ArrayAdapter<String> {
             
             view.setTag(viewHolder);
             
-            int height = 0;
-            if (position == getCount()-1 || position==0) {
-            	height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, ROW_SPACING * 2, getContext().getResources().getDisplayMetrics());	
-        	} else {
-        		height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, ROW_SPACING, getContext().getResources().getDisplayMetrics());
-        	}
-        	
-//            RelativeLayout layout = (RelativeLayout)view;
-//            View child = layout.getChildAt(0);
-            int width= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_WIDTH, getContext().getResources().getDisplayMetrics());
-            int marginLeft = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_MARGIN, getContext().getResources().getDisplayMetrics());
-            RelativeLayout.LayoutParams layoutParams= new RelativeLayout.LayoutParams(width, height);
-            layoutParams.setMargins(marginLeft,0,0,0);
-    		child.setLayoutParams(layoutParams);
-            
             
         }
         
         ViewHolder holder = (ViewHolder) view.getTag();
         
+        int height = 0;
         if (position == getCount()-1 || position==0) {
-          RelativeLayout layout = (RelativeLayout)view;
-          View child = layout.getChildAt(0);
-        	int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, ROW_SPACING * 2, getContext().getResources().getDisplayMetrics());
-            int width= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_WIDTH, getContext().getResources().getDisplayMetrics());
-            int marginLeft = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_MARGIN, getContext().getResources().getDisplayMetrics());
-            RelativeLayout.LayoutParams layoutParams= new RelativeLayout.LayoutParams(width, height);
-            layoutParams.setMargins(marginLeft,0,0,0);
-    		child.setLayoutParams(layoutParams);
+        	height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, ROW_SPACING * 2, getContext().getResources().getDisplayMetrics());	
+    	} else {
+    		height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, ROW_SPACING, getContext().getResources().getDisplayMetrics());
     	}
+    	
+        RelativeLayout layout = (RelativeLayout)view;
+        View child = layout.getChildAt(0);
+        int width= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_WIDTH, getContext().getResources().getDisplayMetrics());
+        int marginLeft = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_SEPERATOR_MARGIN, getContext().getResources().getDisplayMetrics());
+        RelativeLayout.LayoutParams layoutParams= new RelativeLayout.LayoutParams(width, height);
+        layoutParams.setMargins(marginLeft,0,0,0);
+		child.setLayoutParams(layoutParams);
         
 
 		            
